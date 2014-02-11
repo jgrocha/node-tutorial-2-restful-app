@@ -25,6 +25,19 @@ exports.adduser = function(db) {
 };
 
 /*
+ * PUT to moduser
+ */
+
+exports.moduser = function(db) {
+  return function(req, res) {
+    var userToUpdate = req.params.id;
+    db.collection('userlist').updateById(db.collection('userlist').id(userToUpdate), {$set: req.body}, function(err, result) {
+      res.send((result === 1) ? { msg: '' } : { msg:'error: ' + err });
+    });
+  }
+};
+
+/*
  * DELETE to deleteuser.
  */
 

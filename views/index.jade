@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1= title
-  p Welcome to our test
+  p Welcome to Node.js + REST + Mongo
 
   // Wrapper
   #wrapper
@@ -39,6 +39,7 @@ block content
     h2 Add User
     #addUser
       fieldset
+        input#inputID(type='hidden', placeholder='_id')
         input#inputUserName(type='text', placeholder='Username')
         input#inputUserEmail(type='text', placeholder='Email')
         br
@@ -49,6 +50,7 @@ block content
         input#inputUserGender(type='text', placeholder='gender')
         br
         button#btnAddUser Add User
+        button#btnModUser Update User
     // /ADD USER
 
   // /WRAPPER
